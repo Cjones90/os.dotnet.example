@@ -1,0 +1,18 @@
+version: "3"
+services:
+    main:
+        build: .
+        image: jestrr/dotnet:0.1.0
+        entrypoint: ["xsp4", "--port", "9000", "--nonstop"]
+        # volumes:
+        #     # HOST:CONTAINER
+        #     - ./src:/home/app/src
+        #     - ./bin:/home/app/bin
+        ports:
+            # HOST:CONTAINER
+            - "5555:9000"
+        labels:
+            com.consul.service: dotnet
+        # environment:
+
+
